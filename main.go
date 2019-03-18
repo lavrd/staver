@@ -19,7 +19,7 @@ func main() {
 
 	log.Println("Staver")
 	log.Println("Dist folder:", *dist)
-	log.Println("Port:", *port, "\n")
+	log.Println("Port:", *port)
 
-	http.ListenAndServe(fmt.Sprintf(":%v", *port), logger(fs))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", *port), logger(fs)))
 }
